@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+* {
+  font-family: "Comfortaa", sans-serif;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.react-markdown {
+    border: 1px solid #F00;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: calc(80vw - 20px);
+    overflow: auto;
+}
+
+.react-markdown * {
+    max-width: calc(80vw - 20px);
+}
+
+*::-webkit-scrollbar-track {
+  background: #e1e2e4;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: hsla(0, 100%, 52%, 0.589);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: hsla(0, 100%, 52%, 0.322);
+}
+
+
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+body {
+    margin: 0;
+    padding: 0
+}
+
+h1 {
+    font-size: 44px;
+}
+
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 34px;
+    }
+}
