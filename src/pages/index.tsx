@@ -1,15 +1,22 @@
 import { DeviceDemo } from "@/components/Demo";
 import "./global.css";
 import { Title } from "@/components/Title";
-import { useEffect, useState } from "react";
+import { useEffect, useState, createRef } from "react";
 import { Logo } from "@/components/Logo";
 import { Nav } from "@/components/Nav";
 import { Description } from "@/components/Description";
 import { useOrientation } from "@/hooks/useOrientation";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import {
+  openContact,
+  openDocs,
+  openGithub,
+  openLicense,
+  openNpm,
+} from "@/utils";
 
 const README =
-  "https://api.github.com/repos/mdjfs/react-pixels/contents/README.md";
+  "https://api.github.com/repos/mdjfs/react-profile/contents/docs/GET_STARTED.md";
 
 const ICON_CUSTOM_IMG = (
   <>
@@ -55,6 +62,18 @@ export default function Home() {
   const [lan, setLanguage] = useState<string>("en");
   const [theme, setTheme] = useState<string>("default");
   const { isPortrait } = useOrientation();
+  const docsRef = createRef<HTMLDivElement>();
+  const editorRef = createRef<HTMLDivElement>();
+
+  const goToEditor = () =>
+    editorRef &&
+    editorRef.current &&
+    editorRef.current.scrollIntoView({ behavior: "smooth" });
+
+  const goToGetStarted = () =>
+    docsRef &&
+    docsRef.current &&
+    docsRef.current.scrollIntoView({ behavior: "smooth" });
 
   const inputFile = () => {
     const input = document.createElement("input");
@@ -72,7 +91,7 @@ export default function Home() {
 
   return (
     <>
-      <Nav />
+      <Nav goToEditor={goToEditor} goToGetStarted={goToGetStarted} />
       {isPortrait && (
         <div
           style={{
@@ -82,7 +101,10 @@ export default function Home() {
             justifyContent: "center",
           }}
         >
-          <Description />
+          <Description
+            goToEditor={goToEditor}
+            goToGetStarted={goToGetStarted}
+          />
           <div
             style={{
               marginTop: 39,
@@ -90,6 +112,7 @@ export default function Home() {
               display: "grid",
               justifyContent: "center",
             }}
+            ref={editorRef}
           >
             <div style={{ marginBottom: 46 }}>
               <Title>Playground</Title>
@@ -465,7 +488,10 @@ export default function Home() {
         </div>
       )}
       <div style={{ marginTop: 80, display: "grid", justifyContent: "center" }}>
-        <div style={{ width: "100%", textAlign: "center", marginBottom: 45 }}>
+        <div
+          style={{ width: "100%", textAlign: "center", marginBottom: 45 }}
+          ref={docsRef}
+        >
           <Title>Get Started</Title>
         </div>
         {readme && (
@@ -483,6 +509,7 @@ export default function Home() {
             backgroundColor: "transparent",
             cursor: "pointer",
           }}
+          onClick={() => openDocs()}
         >
           <Title fontSize={18}>Documentation</Title>
         </button>
@@ -510,18 +537,30 @@ export default function Home() {
             fontSize: 20,
           }}
         >
-          <a style={{ cursor: "pointer" }}>Contact</a>
-          <a style={{ cursor: "pointer" }}>Docs</a>
-          <a style={{ cursor: "pointer" }}>Repo</a>
-          <a style={{ cursor: "pointer" }}>License</a>
+          <a style={{ cursor: "pointer" }} onClick={() => openContact()}>
+            Contact
+          </a>
+          <a style={{ cursor: "pointer" }} onClick={() => openDocs()}>
+            Docs
+          </a>
+          <a style={{ cursor: "pointer" }} onClick={() => openGithub()}>
+            Repo
+          </a>
+          <a style={{ cursor: "pointer" }} onClick={() => openLicense()}>
+            License
+          </a>
         </div>
         <div style={{ alignSelf: "end" }}>
           <div>
-            <Logo type="mobile" footer />
+            <Logo type="mobile" footer={true} />
           </div>
           <div style={{ display: "flex", gap: 30, marginBottom: 20 }}>
-            <div style={{ cursor: "pointer" }}>{NPM_SVG_BLACK}</div>
-            <div style={{ cursor: "pointer" }}>{GITHUB_SVG_BLACK}</div>
+            <div style={{ cursor: "pointer" }} onClick={() => openNpm()}>
+              {NPM_SVG_BLACK}
+            </div>
+            <div style={{ cursor: "pointer" }} onClick={() => openGithub()}>
+              {GITHUB_SVG_BLACK}
+            </div>
           </div>
         </div>
       </div>
