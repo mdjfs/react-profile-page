@@ -101,6 +101,12 @@ export default function Home() {
   return (
     <>
       <Head>
+        <title>React Image Editor</title>
+        <meta
+          name="description"
+          content="Image editor for crop, filter and adjust image colors with React"
+        />
+        <link rel="icon" type="image/x-icon" href="react-profile.ico"></link>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
@@ -109,6 +115,10 @@ export default function Home() {
           async
           src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"
         ></script>
+        <meta
+          name="keywords"
+          content="react, image, crop, pixelsjs, pixels, profile, avatar, filter, filters, colors, adjust, brightness, saturation, contrast, library, npm, editor, github"
+        />
       </Head>
       <Nav goToEditor={goToEditor} goToGetStarted={goToGetStarted} />
       {isPortrait && (
