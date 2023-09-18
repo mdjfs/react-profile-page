@@ -7,8 +7,12 @@ export const openNpm = () => {
 };
 
 export const openDocs = () => {
+  window.location.href = "https://github.com/mdjfs/react-profile#readme";
+};
+
+export const openContribute = () => {
   window.location.href =
-    "https://github.com/mdjfs/react-profile/blob/master/README.md";
+    "https://github.com/mdjfs/react-profile#contributing--developing";
 };
 
 export const openLicense = () => {
@@ -17,5 +21,13 @@ export const openLicense = () => {
 };
 
 export const openContact = () => {
-  window.open("mailto:developer@marcosfuenmayor.com", "_self");
+  window.location.href = "mailto:developer@marcosfuenmayor.com";
+};
+
+export const openReactImageCrop = () => {
+  window.location.href = "https://github.com/DominicTobias/react-image-crop";
+};
+
+export const openPixelsJS = () => {
+  window.location.href = "https://github.com/silvia-odwyer/pixels.js";
 };

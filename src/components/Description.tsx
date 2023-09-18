@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useOrientation } from "@/hooks/useOrientation";
 import { Title } from "./Title";
+import { openGithub, openNpm, openPixelsJS, openReactImageCrop } from "@/utils";
 
 export const GITHUB_SVG = (
   <>
@@ -150,13 +151,20 @@ export function Description(props: Props) {
           }}
         >
           Developed as{" "}
-          <b style={{ color: "#F00", cursor: "pointer" }}>
+          <b
+            style={{ color: "#F00", cursor: "pointer" }}
+            onClick={() => openGithub()}
+          >
             open-source software
           </b>
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: 37 }}>
-          <div style={{ cursor: "pointer" }}>{NPM_SVG}</div>
-          <div style={{ cursor: "pointer" }}>{GITHUB_SVG}</div>
+          <div style={{ cursor: "pointer" }} onClick={() => openNpm()}>
+            {NPM_SVG}
+          </div>
+          <div style={{ cursor: "pointer" }} onClick={() => openGithub()}>
+            {GITHUB_SVG}
+          </div>
         </div>
         <p
           style={{
@@ -188,7 +196,12 @@ export function Description(props: Props) {
           }}
         >
           Thanks to{" "}
-          <b style={{ color: "#F00", cursor: "pointer" }}>react-image-crop</b>
+          <b
+            style={{ color: "#F00", cursor: "pointer" }}
+            onClick={() => openReactImageCrop()}
+          >
+            react-image-crop
+          </b>
         </p>
         <div
           style={{ display: "flex", alignItems: "center", marginBottom: 20 }}
@@ -222,7 +235,12 @@ export function Description(props: Props) {
           }}
         >
           Thanks to{" "}
-          <b style={{ color: "#F00", cursor: "pointer" }}>Pixels.js</b>
+          <b
+            style={{ color: "#F00", cursor: "pointer" }}
+            onClick={() => openPixelsJS()}
+          >
+            Pixels.js
+          </b>
         </p>
         <div
           style={{ display: "flex", alignItems: "center", marginBottom: 20 }}

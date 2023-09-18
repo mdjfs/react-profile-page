@@ -9,11 +9,13 @@ import { useOrientation } from "@/hooks/useOrientation";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import {
   openContact,
+  openContribute,
   openDocs,
   openGithub,
   openLicense,
   openNpm,
 } from "@/utils";
+import Head from "next/head";
 
 const README =
   "https://api.github.com/repos/mdjfs/react-profile/contents/docs/GET_STARTED.md";
@@ -89,8 +91,25 @@ export default function Home() {
       .then((json) => setReadme(atob(json.content)));
   }, []);
 
+  useEffect(() => {
+    if (readme && typeof window === "object") {
+      const { hljs } = window as any;
+      if (hljs) hljs.highlightAll();
+    }
+  }, [readme]);
+
   return (
     <>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+        />
+        <script
+          async
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"
+        ></script>
+      </Head>
       <Nav goToEditor={goToEditor} goToGetStarted={goToGetStarted} />
       {isPortrait && (
         <div
@@ -158,7 +177,10 @@ export default function Home() {
                 You can aslo create your own themes and even suggest them to
                 make this list of themes even bigger
               </div>
-              <div style={{ fontSize: 8, color: "#F00", cursor: "pointer" }}>
+              <div
+                style={{ fontSize: 8, color: "#F00", cursor: "pointer" }}
+                onClick={() => openContribute()}
+              >
                 Learn more here
               </div>
               <div style={{ marginTop: 10, fontSize: 16 }}>Language</div>
@@ -261,7 +283,10 @@ export default function Home() {
                 You can also suggest corrections for language packs or suggest
                 more
               </div>
-              <div style={{ fontSize: 8, color: "#F00", cursor: "pointer" }}>
+              <div
+                style={{ fontSize: 8, color: "#F00", cursor: "pointer" }}
+                onClick={() => openContribute()}
+              >
                 Learn more here
               </div>
               <button
