@@ -382,7 +382,10 @@ export default function Home() {
                   You can aslo create your own themes and even suggest them to
                   make this list of themes even bigger
                 </div>
-                <div style={{ fontSize: 9, color: "#F00", cursor: "pointer" }}>
+                <div
+                  style={{ fontSize: 9, color: "#F00", cursor: "pointer" }}
+                  onClick={() => openContribute()}
+                >
                   Learn more here
                 </div>
                 <div style={{ marginTop: 10, fontSize: 24 }}>Language</div>
@@ -485,7 +488,10 @@ export default function Home() {
                   You can also suggest corrections for language packs or suggest
                   more
                 </div>
-                <div style={{ fontSize: 9, color: "#F00", cursor: "pointer" }}>
+                <div
+                  style={{ fontSize: 9, color: "#F00", cursor: "pointer" }}
+                  onClick={() => openContribute()}
+                >
                   Learn more here
                 </div>
                 <button
