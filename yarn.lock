@@ -2349,10 +2349,10 @@ react-pixels@^0.5.8:
   dependencies:
     node-pixels "^0.0.1"
 
-react-profile@^0.9.7:
-  version "0.9.7"
-  resolved "https://registry.yarnpkg.com/react-profile/-/react-profile-0.9.7.tgz#502f65439fac8ea317e7a71392de3e58271d1d92"
-  integrity sha512-VTq3T4xziy+hvfiW1Exr7jdTh4gPPcpPTZNvzqSSO1ENX8CYMVSX7jy4yCePmP71aCa+kLtQKAPCSb7eEo+mnQ==
+react-profile@^0.91.0:
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/react-profile/-/react-profile-0.91.0.tgz#f4f36dbe7be8a8e541a41f3d0a4bd2f14150135c"
+  integrity sha512-q75IkF1hXuUHuaAU1Ho2BWyHSuy1UWsNqiY8svtPnfxUzuU/YZKymps1uEdyH4Oe22JDfEajXcCdsJ1V223JbQ==
   dependencies:
     react-image-crop "^10.1.5"
     react-pixels "^0.5.8"
