@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/next-script-for-ga */
 import { DeviceDemo } from "@/components/Demo";
 import "./global.css";
 import { Title } from "@/components/Title";
@@ -119,6 +120,19 @@ export default function Home() {
           name="keywords"
           content="react, image, crop, pixelsjs, pixels, profile, avatar, filter, filters, colors, adjust, brightness, saturation, contrast, library, npm, editor, github"
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DNHKY777BV"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-DNHKY777BV');`,
+          }}
+        ></script>
       </Head>
       <Nav goToEditor={goToEditor} goToGetStarted={goToGetStarted} />
       {isPortrait && (
