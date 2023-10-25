@@ -1,23 +1,21 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
-import ReactProfile from 'react-profile'
-import Header from 'next/head'
+import { ReactProfile } from 'react-profile'
 
 export default function Demo() {
-    const [img, setImg] = useState<HTMLImageElement>();
+    const [img, setImg] = useState<HTMLImageElement|File>();
     const [lan, setLanguage] = useState<string>();
     const [loaded, setLoaded] = useState(false);
     const router = useRouter();
     const { theme, language } = router.query;
 
-    
-    const loadTheme = (theme: string) => import(`react-profile/themes/${theme}.min.css`);
+    const loadTheme = (theme: "default"|"dark") => theme === "default" ? import('react-profile/themes/default') : import('react-profile/themes/dark');
 
     useEffect(() => {
         if(router.isReady) {
             setLanguage(language as string || "en")
             const loadDefault = () => loadTheme("default").then(() => setLoaded(true)).catch(() => alert('Error loading styles'))
-            if(theme) loadTheme(theme as string).then(() => setLoaded(true)).catch(loadDefault)
+            if(theme) loadTheme(theme as any).then(() => setLoaded(true)).catch(loadDefault)
             else loadDefault()
         }
     }, [theme, language, router.isReady])
@@ -26,17 +24,7 @@ export default function Demo() {
         if(typeof window) {
             window.addEventListener("pushImage", (event: any) => {
                 const file = event.detail.dataTransfer.file as File;
-                if(file.type.startsWith("image/")) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        const img = new Image();
-                        if(e.target) {
-                            img.src = e.target.result as any;
-                            img.onload = () => setImg(img);
-                        }
-                    }
-                    reader.readAsDataURL(file)
-                }
+                setImg(file)
             })
         }
     }, [])
