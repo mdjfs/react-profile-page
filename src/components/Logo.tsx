@@ -14,6 +14,7 @@ export function Logo(props: LogoProps) {
     width={150}
     height={150}
     fill="none"
+    aria-label="React Profile Editor Logo"
   >
     <path
       fill={props.footer ? "black" : "red"}
@@ -35,6 +36,7 @@ export function Logo(props: LogoProps) {
     width={81}
     height={81}
     fill="none"
+    aria-label="React Profile Editor Logo"
     {...props}
   >
     <path

@@ -4,6 +4,10 @@
   font-family: "Comfortaa", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 *::-webkit-scrollbar {
   width: 4px;
   height: 4px;

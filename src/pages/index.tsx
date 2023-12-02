@@ -105,8 +105,9 @@ export default function Home() {
         <title>React Image Editor</title>
         <meta
           name="description"
-          content="Image editor for crop, filter and adjust image colors with React"
+          content="React Avatar Editor for crop, filter and adjust image colors using React"
         />
+        <link rel="canonical" href="https://medium.com/p/f45547351b70" />
         <link rel="icon" type="image/x-icon" href="react-profile.ico"></link>
         <link
           rel="stylesheet"
@@ -118,7 +119,7 @@ export default function Home() {
         ></script>
         <meta
           name="keywords"
-          content="react, image, crop, pixelsjs, pixels, profile, avatar, filter, filters, colors, adjust, brightness, saturation, contrast, library, npm, editor, github"
+          content="react, avatar, editor, image, crop, pixelsjs, pixels, profile, avatar, filter, filters, colors, adjust, brightness, saturation, contrast, library, npm, editor, github"
         />
         <script
           async
