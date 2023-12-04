@@ -9,7 +9,10 @@ export default function Demo() {
     const router = useRouter();
     const { theme, language } = router.query;
 
-    const loadTheme = (theme: "default"|"dark") => theme === "default" ? import('react-profile/themes/default') : import('react-profile/themes/dark');
+    const loadTheme = (name: "default"|"dark") => {
+        if(name === "dark") return import("react-profile/themes/dark" as any)
+        return import("react-profile/themes/default" as any)
+    }
 
     useEffect(() => {
         if(router.isReady) {
