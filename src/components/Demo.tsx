@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import { useState, useEffect, createRef } from 'react';
-import { SUPPORTED_LANGUAGES } from 'react-profile/dist/types'
+import { SUPPORTED_LANGUAGES } from 'react-profile'
 
 interface DemoProps {
     language?: SUPPORTED_LANGUAGES,
