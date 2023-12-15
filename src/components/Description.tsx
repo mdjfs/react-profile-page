@@ -78,7 +78,7 @@ export function Description(props: Props) {
           about your user's photo
         </p>
         <div style={{ marginLeft: isPortrait ? 40 : 120 }}>
-          <Title>This Editor</Title>
+          <Title subheader>This Editor</Title>
         </div>
         <p
           style={{

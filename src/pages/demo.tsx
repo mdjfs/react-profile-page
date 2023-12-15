@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
-import { ReactProfile } from 'react-profile'
+import ReactProfile from 'react-profile'
 
 export default function Demo() {
     const [img, setImg] = useState<HTMLImageElement|File>();

@@ -119,7 +119,7 @@ export default function Home() {
         ></script>
         <meta
           name="keywords"
-          content="react, avatar, editor, image, crop, pixelsjs, pixels, profile, avatar, filter, filters, colors, adjust, brightness, saturation, contrast, library, npm, editor, github"
+          content="react, avatar, editor, image, crop, pixelsjs, pixels, profile, avatar, filter, filters, colors, adjust, brightness, saturation, contrast, library, npm, editor, github, react avatar editor, npm library"
         />
         <script
           async

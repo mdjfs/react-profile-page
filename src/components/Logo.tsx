@@ -14,7 +14,7 @@ export function Logo(props: LogoProps) {
     width={150}
     height={150}
     fill="none"
-    aria-label="React Profile Editor Logo"
+    aria-label="React Avatar Editor Logo"
   >
     <path
       fill={props.footer ? "black" : "red"}
@@ -36,7 +36,7 @@ export function Logo(props: LogoProps) {
     width={81}
     height={81}
     fill="none"
-    aria-label="React Profile Editor Logo"
+    aria-label="React Avatar Editor Logo"
     {...props}
   >
     <path
@@ -71,8 +71,7 @@ export function Logo(props: LogoProps) {
     {props.type === "desktop" && DESKTOP}
     {props.type === "mobile" && MOBILE}
     {props.withTitle && <div style={{display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center", gap: 3, justifyContent: "center"}}>
-        <Title fontSize={34}>REACT</Title>
-        <Title fontSize={34}>PROFILE</Title>
+        <Title fontSize={34} header>REACT <br/> PROFILE</Title>
     </div>}
   </div>
 }

@@ -55,12 +55,12 @@ body {
     padding: 0
 }
 
-h1 {
+.app-title {
     font-size: 44px;
 }
 
 @media screen and (max-width: 767px) {
-    h1 {
+    .app-title {
         font-size: 34px;
     }
 }
