@@ -102,7 +102,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>React Image Editor</title>
+        <title>React Avatar Editor</title>
         <meta
           name="description"
           content="React Avatar Editor for crop, filter and adjust image colors using React"
