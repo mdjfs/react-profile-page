@@ -600,7 +600,7 @@ export default function Home() {
             Docs
           </a>
           <a style={{ cursor: "pointer" }} onClick={() => openGithub()}>
-            Repo
+            Github
           </a>
           <a style={{ cursor: "pointer" }} onClick={() => openLicense()}>
             License
