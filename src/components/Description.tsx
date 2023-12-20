@@ -5,7 +5,7 @@ import { openGithub, openNpm, openPixelsJS, openReactImageCrop } from "@/utils";
 
 export const GITHUB_SVG = (
   <>
-    <svg xmlns="http://www.w3.org/2000/svg" width={30} height={31} fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width={30} height={31} fill="none" aria-label="Available on GitHub">
       <path
         fill="red"
         fillOpacity={0.76}
@@ -17,7 +17,7 @@ export const GITHUB_SVG = (
 
 export const NPM_SVG = (
   <>
-    <svg xmlns="http://www.w3.org/2000/svg" width={30} height={27} fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width={30} height={27} fill="none" aria-label="Available on NPM">
       <path
         stroke="red"
         strokeOpacity={0.76}
@@ -64,7 +64,7 @@ export function Description(props: Props) {
     >
       <div style={{ width: isPortrait ? 300 : 450 }}>
         <div style={{ marginLeft: isPortrait ? 0 : 40 }}>
-          <Title>Don't Worry</Title>
+          <Title fontSize={isPortrait ? 22 : 40}>Don't Worry</Title>
         </div>
         <p
           style={{
@@ -75,10 +75,10 @@ export function Description(props: Props) {
             fontSize: isPortrait ? 16 : 24,
           }}
         >
-          about your user's photo
+          about your user's photo. This
         </p>
-        <div style={{ marginLeft: isPortrait ? 40 : 120 }}>
-          <Title subheader>This Editor</Title>
+        <div style={{ marginLeft: isPortrait ? 30 : 10 }}>
+          <Title header fontSize={isPortrait ? 22 : 40}>React Image Editor</Title>
         </div>
         <p
           style={{
@@ -155,7 +155,7 @@ export function Description(props: Props) {
             style={{ color: "#F00", cursor: "pointer" }}
             onClick={() => openGithub()}
           >
-            open-source software
+            open source software
           </b>
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: 37 }}>
@@ -181,7 +181,7 @@ export function Description(props: Props) {
       <div style={{ alignSelf: "center", justifySelf: "center" }}>
         <div style={{ display: "flex", alignItems: "center" }}>
           {OK_SVG}
-          <p style={{ margin: 0, marginLeft: 1, fontSize: 12 }}>Crop</p>
+          <p style={{ margin: 0, marginLeft: 1, fontSize: 12 }}>Image Crop</p>
           <div style={{ width: 8 }}></div>
           {OK_SVG}
           <p style={{ margin: 0, marginLeft: 1, fontSize: 12 }}>Square Image</p>
@@ -208,7 +208,7 @@ export function Description(props: Props) {
         >
           {OK_SVG}
           <p style={{ margin: 0, marginLeft: 1, fontSize: 12 }}>
-            Adjust Colors
+            Adjust Image Colors
           </p>
         </div>
         <div
@@ -216,13 +216,13 @@ export function Description(props: Props) {
         >
           {OK_SVG}
           <p style={{ margin: 0, marginLeft: 1, fontSize: 12 }}>
-            Size Optimization
+            Image Optimization
           </p>
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
           {OK_SVG}
           <p style={{ margin: 0, marginLeft: 1, fontSize: 12 }}>
-            Apply Filters
+            Apply Image Filters
           </p>
         </div>
         <p
@@ -246,12 +246,12 @@ export function Description(props: Props) {
           style={{ display: "flex", alignItems: "center", marginBottom: 20 }}
         >
           {OK_SVG}
-          <p style={{ margin: 0, marginLeft: 1, fontSize: 12 }}>Theming</p>
+          <p style={{ margin: 0, marginLeft: 1, fontSize: 12 }}>Custom Style Support</p>
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
           {OK_SVG}
           <p style={{ margin: 0, marginLeft: 1, fontSize: 12 }}>
-            Multi Language
+            Multi Language Support
           </p>
         </div>
       </div>

@@ -608,6 +608,11 @@ export default function Home() {
         </div>
         <div style={{ alignSelf: "end" }}>
           <div>
+            <h2 style={{    
+              fontSize: 8,
+              fontWeight: 400,
+              margin: 0
+            }}>React Profile Editor</h2>
             <Logo type="mobile" footer={true} />
           </div>
           <div style={{ display: "flex", gap: 30, marginBottom: 20 }}>

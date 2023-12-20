@@ -71,7 +71,7 @@ export function Logo(props: LogoProps) {
     {props.type === "desktop" && DESKTOP}
     {props.type === "mobile" && MOBILE}
     {props.withTitle && <div style={{display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center", gap: 3, justifyContent: "center"}}>
-        <Title fontSize={34} header>REACT <br/> PROFILE</Title>
+        <Title fontSize={34} subheader>REACT <br/> PROFILE</Title>
     </div>}
   </div>
 }
