@@ -107,7 +107,7 @@ export default function Home() {
           name="description"
           content="React Avatar Editor for image crop, apply image filters and adjust image colors using React. Image optimization for user profile image, efficient and fast react image editor"
         />
-        <link rel="canonical" href="https://avatar-react-editor.vercel.app" />
+        <link rel="canonical" href="https://react-image-editor.com/" />
         <link rel="help" href="https://medium.com/p/f45547351b70" />
         <link rel="icon" type="image/x-icon" href="react-profile.ico"></link>
         <link
