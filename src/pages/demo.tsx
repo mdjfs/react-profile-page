@@ -24,7 +24,7 @@ export default function Demo() {
     }, [theme, language, router.isReady])
 
     useEffect(() => {
-        if(typeof window) {
+        if(typeof window === 'object') {
             window.addEventListener("pushImage", (event: any) => {
                 const file = event.detail.dataTransfer.file as File;
                 setImg(file)
