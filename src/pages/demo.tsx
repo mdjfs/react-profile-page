@@ -24,10 +24,18 @@ export default function Demo() {
     }, [theme, language, router.isReady])
 
     useEffect(() => {
-        if(typeof window === 'object') {
+        if(typeof window) {
             window.addEventListener("pushImage", (event: any) => {
                 const file = event.detail.dataTransfer.file as File;
-                setImg(file)
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = new Image();
+                    if(e.target) {
+                        img.src = e.target.result as any;
+                        img.onload = () => setImg(img);
+                    }
+                }
+                reader.readAsDataURL(file)
             })
         }
     }, [])

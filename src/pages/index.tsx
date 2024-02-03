@@ -82,7 +82,7 @@ export default function Home() {
     const input = document.createElement("input");
     input.type = "file";
     input.accept = "image/jpeg, image/png";
-    input.oninput = () => input.files && setCustomImg(input.files[0]);
+    input.oninput = (e) => input.files && setCustomImg(input.files[0]);
     input.click();
   };
 
